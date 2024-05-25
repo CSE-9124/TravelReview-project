@@ -5,6 +5,13 @@ public class User extends Model{
     private int age;
     
     // Constructors
+    // For method login()
+    public User(int id, String role) {
+        super(id);
+        this.role = role;
+    }
+
+    // For method getUserById()
     public User(int id, String username, String name, String phoneNumber, String email, String role, int age) {
         super(id);
         this.username = username;
