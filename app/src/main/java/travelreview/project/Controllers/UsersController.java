@@ -6,6 +6,26 @@ import travelreview.project.Config.DbConfig;
 import travelreview.project.Models.User;
 
 public class UsersController extends DbConfig {
+    // CREATE
+    public static boolean register(String username, String name, String email, String password) {
+        query = "INSERT INTO users (username, name, email, password, role) VALUES (?, ?, ?, ?)";
+        try {
+            getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, name);
+            preparedStatement.setString(3, email);
+            preparedStatement.setString(4, password);
+            preparedStatement.setString(5, "user");
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    // READ
     // Method login yang mengembalikan role user
     public static User login(String email, String password) {
         query = "SELECT * FROM users WHERE email=? AND password=?";
@@ -30,6 +50,7 @@ public class UsersController extends DbConfig {
         return null;
     }
 
+    // READ
     // Method untuk mengambil info user berdasarkan id
     public static User getUserById(int id) {
         query = "SELECT * FROM users WHERE id=?";
@@ -55,5 +76,27 @@ public class UsersController extends DbConfig {
             e.printStackTrace();
         }
         return null;
+    }
+
+    // UPDATE
+    public static boolean updateUser(int id, String username, String name, String phoneNumber, String email, int age) {
+        query = "UPDATE users SET username=?, name=?, phone_number=?, email=?, age=? WHERE id=?";
+        try {
+            getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, name);
+            preparedStatement.setString(3, phoneNumber);
+            preparedStatement.setString(4, email);
+            preparedStatement.setInt(5, age);
+            preparedStatement.setInt(6, id);
+
+            int affctRows = preparedStatement.executeUpdate();
+
+            return affctRows > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
