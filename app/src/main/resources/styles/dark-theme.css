@@ -1,0 +1,114 @@
+/* Dark Theme */
+.scene {
+    -fx-background-color: #1a1a1a;
+}
+
+.title {
+    -fx-text-fill: #ffffff;
+}
+
+.text {
+    -fx-text-fill: #cccccc;
+}
+
+/* Style for LoginScene and RegisterScene*/
+.text-link {
+    -fx-text-fill: #ffa200;
+}
+
+.text-status {
+    -fx-text-fill: #ff0000;
+}
+
+.textfield {
+    -fx-max-width: 350px;
+    -fx-background-color: #333333;
+    -fx-text-fill: #ffffff;
+}
+
+.loginbutton {
+    -fx-background-color: white;
+    -fx-text-fill: rgb(0, 0, 0);
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-background-radius: 20px;
+}
+
+.loginbutton:hover {
+    -fx-background-color: #ffa200;
+    -fx-text-fill: rgb(0, 0, 0);
+}
+
+.loginbutton:disabled {
+    -fx-text-fill: rgba(0, 0, 0, 0.856);
+}
+
+.registerbutton {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-background-radius: 20px;
+}
+
+.registerbutton:hover {
+    -fx-background-color: #ffa200;
+    -fx-text-fill: rgb(0, 0, 0);
+}
+
+.registerbutton:disabled {
+    -fx-text-fill: rgba(0, 0, 0, 0.856);
+}
+
+
+/* 
+.scene {
+    -fx-background-color: #1a1a1a;
+    -fx-text-fill: rgb(255, 255, 255);
+}
+
+.main-content {
+    -fx-background-color: #1a1a1a;
+    -fx-text-fill: #ffffff;
+}
+
+.main-content > .label {
+    -fx-text-fill: #ffffff;
+}
+
+.button {
+    -fx-background-color: white;
+    -fx-text-fill: rgb(0, 0, 0);
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-background-radius: 20px;
+}
+
+.button:hover {
+    -fx-background-color: #ffa200;
+    -fx-text-fill: rgb(0, 0, 0);
+}
+
+.button:disabled {
+    -fx-text-fill: rgb(0, 0, 0);  // Warna teks saat button nonaktif
+}
+
+.grid-pane {
+    -fx-background-color: #333333;  // Sesuaikan dengan warna latar belakang aplikasi Anda 
+    -fx-padding: 20;
+}
+
+.text {
+    -fx-fill: #cccccc;
+}
+
+.text-field {
+    -fx-background-color: #333333;
+    -fx-text-fill: #ffffff;
+}
+
+.text-register-link {
+    -fx-text-fill: #ffa200;
+} */
+
+/* Add more styles for your scene here */

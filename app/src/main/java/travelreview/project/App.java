@@ -3,12 +3,34 @@
  */
 package travelreview.project;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import travelreview.project.Scenes.LoginScene;
+
+public class App extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        stage.setTitle("TravelReview");
+        stage.setResizable(false);
+        Image appIcon = new Image(getClass().getResourceAsStream("/images/OIG1.jpg"));
+        stage.getIcons().add(appIcon);
+        
+        VBox root = new VBox();
+        Scene scene = new Scene(root, 840, 580);
+        scene.getStylesheets().add(getClass().getResource("/styles/dark-theme.css").toExternalForm());
+        
+        stage.setScene(scene);
+        stage.show();
+
+        LoginScene loginScene = new LoginScene(stage);
+        loginScene.show();
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        launch();
     }
 }
