@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import travelreview.project.Abstract.AScene;
 import travelreview.project.Controllers.UsersController;
 import travelreview.project.Models.User;
+import travelreview.project.Scenes.User_scene.HomeScene;
 
 public class LoginScene extends AScene {
 
@@ -120,13 +121,14 @@ public class LoginScene extends AScene {
             User user = UsersController.login(email, password);
             
             if (user != null) {
-                // int id = user.getId();
+                int id = user.getId();
                 String role = user.getRole();
 
                 if (role.equals("admin")) {
                     labelStatus.setText("Login berhasil");
                 } else {
-                    labelStatus.setText("Login berhasil");
+                    HomeScene homeScene = new HomeScene(stage);
+                    homeScene.show(id);
                 }
             } else {
                 labelStatus.setText("Login gagal, email atau password salah");

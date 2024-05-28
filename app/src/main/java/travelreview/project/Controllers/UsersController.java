@@ -8,7 +8,7 @@ import travelreview.project.Models.User;
 public class UsersController extends DbConfig {
     // CREATE
     public static boolean register(String username, String name, String email, String password) {
-        query = "INSERT INTO users (username, name, email, password, role) VALUES (?, ?, ?, ?)";
+        query = "INSERT INTO users (username, name, email, password, role) VALUES (?, ?, ?, ?, ?)";
         try {
             getConnection();
             preparedStatement = connection.prepareStatement(query);
@@ -32,8 +32,8 @@ public class UsersController extends DbConfig {
         try {
             getConnection();
             preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(0, email);
-            preparedStatement.setString(1, password);
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, password);
             try (ResultSet userResult = preparedStatement.executeQuery()) {
                 if (userResult.next()) {
                     int id = userResult.getInt("id");
