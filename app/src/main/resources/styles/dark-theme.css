@@ -11,7 +11,7 @@
     -fx-text-fill: #cccccc;
 }
 
-/* Style for LoginScene and RegisterScene*/
+/* ==> Style for LoginScene and RegisterScene <== */
 .text-link {
     -fx-text-fill: #ffa200;
 }
@@ -61,7 +61,45 @@
 }
 
 
-/* 
+/* ==> Style for Navbar <== */
+.navbar {
+    -fx-background-color: #000000;
+}
+
+.navbarbutton {
+    -fx-background-color: transparent;
+    -fx-pref-width: 90px;
+    -fx-padding: 10px 0px;
+}
+
+/* ==> Style for ProfileScene <== */
+.profileField {
+    -fx-background-color: #333333;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 0px 0px 1px 0px;
+}
+
+.profileField:hover {
+    -fx-border-color: #ffa200;
+}
+
+.profileUpdateButton {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-background-radius: 20px;
+    -fx-height: 30px;
+}
+
+.profileUpdateButton:hover {
+    -fx-background-color: #ffa200;
+    -fx-text-fill: rgb(0, 0, 0);
+}
+
+
+/*
 .scene {
     -fx-background-color: #1a1a1a;
     -fx-text-fill: rgb(255, 255, 255);
