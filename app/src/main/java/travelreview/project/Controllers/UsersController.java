@@ -65,9 +65,10 @@ public class UsersController extends DbConfig {
                     String phoneNumber = resultSet.getString("phone_number");
                     String email = resultSet.getString("email");
                     String role = resultSet.getString("role");
+                    String imagePath = resultSet.getString("image_path");
                     int age = resultSet.getInt("age");
 
-                    User user = new User(id, username, name, phoneNumber, email, role, age);
+                    User user = new User(id, username, name, phoneNumber, email, role, imagePath, age);
 
                     return user;
                 }
@@ -79,8 +80,8 @@ public class UsersController extends DbConfig {
     }
 
     // UPDATE
-    public static boolean updateUser(int id, String username, String name, String phoneNumber, String email, int age) {
-        query = "UPDATE users SET username=?, name=?, phone_number=?, email=?, age=? WHERE id=?";
+    public static boolean updateUser(int id, String username, String name, String phoneNumber, String email, String imagePath, int age) {
+        query = "UPDATE users SET username=?, name=?, phone_number=?, email=?, age=?, image_path=? WHERE id=?";
         try {
             getConnection();
             preparedStatement = connection.prepareStatement(query);
@@ -89,7 +90,8 @@ public class UsersController extends DbConfig {
             preparedStatement.setString(3, phoneNumber);
             preparedStatement.setString(4, email);
             preparedStatement.setInt(5, age);
-            preparedStatement.setInt(6, id);
+            preparedStatement.setString(6, imagePath);
+            preparedStatement.setInt(7, id);
 
             int affctRows = preparedStatement.executeUpdate();
 
