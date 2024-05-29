@@ -24,6 +24,7 @@
     -fx-max-width: 350px;
     -fx-background-color: #333333;
     -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #ffffff;
 }
 
 .loginbutton {
@@ -44,7 +45,7 @@
 }
 
 .registerbutton {
-    -fx-background-color: white;
+    -fx-background-color: rgb(255, 255, 255);
     -fx-text-fill: black;
     -fx-font-weight: bold;
     -fx-font-size: 12px;
@@ -72,6 +73,7 @@
     -fx-padding: 10px 0px;
 }
 
+
 /* ==> Style for ProfileScene <== */
 .profileField {
     -fx-background-color: #333333;
@@ -98,55 +100,20 @@
     -fx-text-fill: rgb(0, 0, 0);
 }
 
-
-/*
-.scene {
-    -fx-background-color: #1a1a1a;
-    -fx-text-fill: rgb(255, 255, 255);
+/* ==> Style for TempatListScene <== */
+.card {
+    -fx-background-color: #000000;
+    -fx-border-color: #ffffff; 
+    -fx-border-width: 1px; 
+    -fx-border-radius: 5px;
 }
 
-.main-content {
-    -fx-background-color: #1a1a1a;
-    -fx-text-fill: #ffffff;
+.card:hover {
+    -fx-border-color: #ffa200;
 }
 
-.main-content > .label {
-    -fx-text-fill: #ffffff;
+.card-detail {
+    -fx-background-color: #000000;
 }
-
-.button {
-    -fx-background-color: white;
-    -fx-text-fill: rgb(0, 0, 0);
-    -fx-font-weight: bold;
-    -fx-font-size: 12px;
-    -fx-background-radius: 20px;
-}
-
-.button:hover {
-    -fx-background-color: #ffa200;
-    -fx-text-fill: rgb(0, 0, 0);
-}
-
-.button:disabled {
-    -fx-text-fill: rgb(0, 0, 0);  // Warna teks saat button nonaktif
-}
-
-.grid-pane {
-    -fx-background-color: #333333;  // Sesuaikan dengan warna latar belakang aplikasi Anda 
-    -fx-padding: 20;
-}
-
-.text {
-    -fx-fill: #cccccc;
-}
-
-.text-field {
-    -fx-background-color: #333333;
-    -fx-text-fill: #ffffff;
-}
-
-.text-register-link {
-    -fx-text-fill: #ffa200;
-} */
 
 /* Add more styles for your scene here */
