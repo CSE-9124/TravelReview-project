@@ -36,7 +36,7 @@ public class App extends Application {
         // TempatListScene tempatListScene = new TempatListScene(stage);
         // tempatListScene.show(1);
         ProfileScene profileScene = new ProfileScene(stage);
-        profileScene.show(1);
+        profileScene.show(2);
     }
 
     public static void main(String[] args) {

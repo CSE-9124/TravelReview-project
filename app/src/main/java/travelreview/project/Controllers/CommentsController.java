@@ -34,7 +34,7 @@ public class CommentsController extends DbConfig {
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
-                String text = resultSet.getString("text");
+                String text = resultSet.getString("komentar");
                 int userId = resultSet.getInt("user_id");
                 int rating = resultSet.getInt("rating");
                 // Fill the comment
