@@ -44,8 +44,9 @@ public class TempatWisataController extends DbConfig {
                 String kota = resultSet.getString("kota");
                 String kategori = resultSet.getString("kategori");
                 String deskripsi = resultSet.getString("deskripsi");
+                int jumlahReview = resultSet.getInt("jumlah_review");
 
-                TempatWisata tempatWisata = new TempatWisata(id, nama, imagePath, lokasi, kota, kategori, deskripsi);
+                TempatWisata tempatWisata = new TempatWisata(id, nama, imagePath, lokasi, kota, kategori, deskripsi, jumlahReview);
 
                 tempatWisatas.add(tempatWisata);
             }
@@ -71,8 +72,9 @@ public class TempatWisataController extends DbConfig {
                 String kota = resultSet.getString("kota");
                 String kategori = resultSet.getString("kategori");
                 String deskripsi = resultSet.getString("deskripsi");
+                int jumlahReview = resultSet.getInt("jumlah_review");
 
-                tempatWisata = new TempatWisata(id, nama, imagePath, lokasi, kota, kategori, deskripsi);
+                tempatWisata = new TempatWisata(id, nama, imagePath, lokasi, kota, kategori, deskripsi, jumlahReview);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -81,8 +83,8 @@ public class TempatWisataController extends DbConfig {
     }
 
     // UPDATE
-    public static boolean updateTempatWisata(int id, String nama, String lokasi, String kota, String kategori, String deskripsi) {
-        query = "UPDATE tempat_wisata SET nama=?, lokasi=?, kota=?, kategori=?, deskripsi=? WHERE id=?";
+    public static boolean updateTempatWisata(int id, String nama, String lokasi, String kota, String kategori, String deskripsi, int jumlahReview) {
+        query = "UPDATE tempat_wisata SET nama=?, lokasi=?, kota=?, kategori=?, deskripsi=?, jumlah_review=? WHERE id=?";
         try {
             getConnection();
             preparedStatement = connection.prepareStatement(query);
@@ -91,7 +93,8 @@ public class TempatWisataController extends DbConfig {
             preparedStatement.setString(3, kota);
             preparedStatement.setString(4, kategori);
             preparedStatement.setString(5, deskripsi);
-            preparedStatement.setInt(6, id);
+            preparedStatement.setInt(6, jumlahReview);
+            preparedStatement.setInt(7, id);
 
             int rowsUpdate = preparedStatement.executeUpdate();
 
@@ -109,6 +112,38 @@ public class TempatWisataController extends DbConfig {
             getConnection();
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static int getJumlahReview(int id) {
+        int jumlahReview = 0;
+        query = "SELECT jumlah_review FROM tempat_wisata WHERE id=?";
+        try {
+            getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, id);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                jumlahReview = resultSet.getInt("jumlah_review");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return jumlahReview;
+    }
+
+    public static boolean updateJumlahReview(int id, int jumlahReview) {
+        query = "UPDATE tempat_wisata SET jumlah_review=? WHERE id=?";
+        try {
+            getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, jumlahReview);
+            preparedStatement.setInt(2, id);
             preparedStatement.executeUpdate();
             return true;
         } catch (Exception e) {
