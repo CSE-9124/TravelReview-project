@@ -73,6 +73,11 @@ public class TempatListScene extends AScene{
             hBoxTempat.setPrefHeight(100);
             hBoxTempat.getStyleClass().add("card");
 
+            hBoxTempat.setOnMouseClicked(e -> {
+                DetailTempatScene detailTempatScene = new DetailTempatScene(stage);
+                detailTempatScene.show(id, tempat.getId());
+            });
+
             gridPane.add(hBoxTempat, 0, row);
 
             row++;
@@ -94,6 +99,8 @@ public class TempatListScene extends AScene{
         HBox root = new HBox(hBoxContent);
         stage.getScene().setRoot(root);
         /* ==> INSTANCE LAYOUT END <== */
+
+
     }
 
 

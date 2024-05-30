@@ -55,9 +55,8 @@ public class HomeScene extends AScene{
         
     }
 
-    @Override
-    protected void show() {}
 
-    @Override
+
+    protected void show() {}
     protected void show(int id, int tempatWisataId) {}
 }

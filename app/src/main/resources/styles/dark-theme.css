@@ -116,4 +116,19 @@
     -fx-background-color: #000000;
 }
 
+/* ==> Style for DetailTempatScene <== */
+.comment {
+    -fx-background-color: #000000;
+    -fx-border-color: #ffffff; 
+    -fx-border-width: 0px, 0px, 1px, 0px; 
+    -fx-border-radius: 5px;
+}
+
+.commentField {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 0px 0px 1px 0px;
+}
+
 /* Add more styles for your scene here */
