@@ -8,6 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.HBox;
@@ -140,6 +141,20 @@ public class LoginScene extends AScene {
             registerScene.show();
         });
         /* ==> BUTTON ACTION END <== */
+
+        /* ==> KEY ACTION START <== */
+        textFieldEmail.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                passwordField.requestFocus();
+            }
+        });
+
+        passwordField.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                buttonLogin.fire();
+            }
+        });
+        
     }
 
     @Override

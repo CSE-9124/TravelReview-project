@@ -137,8 +137,33 @@ public class RegisterScene extends AScene{
             LoginScene loginScene = new LoginScene(stage);
             loginScene.show();
         });
+        /* ==> BUTTON ACTION END <== */
 
-        
+        /* ==> KEY ACTION START <== */
+        textFieldUsername.setOnKeyPressed(e -> {
+            if (e.getCode().toString().equals("ENTER")) {
+                textFieldName.requestFocus();
+            }
+        });
+
+        textFieldName.setOnKeyPressed(e -> {
+            if (e.getCode().toString().equals("ENTER")) {
+                textFieldEmail.requestFocus();
+            }
+        });
+
+        textFieldEmail.setOnKeyPressed(e -> {
+            if (e.getCode().toString().equals("ENTER")) {
+                textFieldPassword.requestFocus();
+            }
+        });
+
+        textFieldPassword.setOnKeyPressed(e -> {
+            if (e.getCode().toString().equals("ENTER")) {
+                buttonRegister.fire();
+            }
+        });
+        /* ==> KEY ACTION END <== */
     }
 
     @Override
