@@ -123,8 +123,17 @@ public class RegisterScene extends AScene{
             String email = textFieldEmail.getText();
             String password = textFieldPassword.getText();
 
-            if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
-                labelStatus.setText("Nama, email, dan password tidak boleh kosong");
+            if (username.isEmpty() || name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+                labelStatus.setText("Username, Nama, Email, dan Password tidak boleh kosong");
+                return;
+            } else if (!email.matches("^[\\w._%+-]+@gmail\\.com$")) {
+                labelStatus.setText("Email harus berakhiran @gmail.com");
+                return;
+            } else if (!password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$")) {
+                labelStatus.setText("Password minimal 8 karakter memiliki huruf besar, huruf kecil, dan angka");
+                return;
+            } else if (UsersController.isUsernameOrEmailTaken(username, email)) {
+                labelStatus.setText("Email atau Username telah digunakan");
                 return;
             } else {
                 UsersController.register(username, name, email, password);

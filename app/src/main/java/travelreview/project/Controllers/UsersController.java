@@ -79,6 +79,24 @@ public class UsersController extends DbConfig {
         return null;
     }
 
+    // READ
+    // Method untuk mengecek apakah username atau email sudah digunakan
+    public static boolean isUsernameOrEmailTaken(String username, String email) {
+        query = "SELECT * FROM users WHERE username=? OR email=?";
+        try {
+            getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, email);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                return resultSet.next();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     // UPDATE
     public static boolean updateUser(int id, String username, String name, String phoneNumber, String email, String imagePath, int age) {
         query = "UPDATE users SET username=?, name=?, phone_number=?, email=?, age=?, image_path=? WHERE id=?";
