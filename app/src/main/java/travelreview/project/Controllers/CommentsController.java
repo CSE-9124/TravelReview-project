@@ -46,4 +46,22 @@ public class CommentsController extends DbConfig {
         }
         return comments;
     }
+
+    // READ
+    public static int getTotalRatingByTempatWisataId(int tempatWisataId) {
+        int totalRating = 0;
+        query = "SELECT rating FROM comments WHERE tempat_wisata_id=?";
+        try {
+            getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, tempatWisataId);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                totalRating += resultSet.getInt("rating");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return totalRating;
+    }
 }

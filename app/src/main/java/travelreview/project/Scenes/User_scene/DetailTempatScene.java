@@ -22,6 +22,7 @@ import travelreview.project.Models.Comment;
 import travelreview.project.Models.TempatWisata;
 import travelreview.project.Models.User;
 import travelreview.project.Scenes.Components.Navbar;
+import travelreview.project.Utils.RateUtils;
 import travelreview.project.Controllers.CommentsController;
 import travelreview.project.Controllers.TempatWisataController;
 import travelreview.project.Controllers.UsersController;
@@ -39,6 +40,8 @@ public class DetailTempatScene extends AScene {
         TempatWisata tempatWisata = TempatWisataController.getTempatWisataById(tempatWisataId);
 
         List<Comment> comments = CommentsController.getAllCommentsByTempatWisataId(tempatWisataId);
+
+        String totalRate = RateUtils.calculateRatingAverage(TempatWisataController.getJumlahReview(tempatWisataId), CommentsController.getTotalRatingByTempatWisataId(tempatWisataId));
 
         /* ==> INSTANCE LAYOUT START <== */
         Label labelTitle = new Label("Detail Tempat Wisata");
@@ -72,7 +75,9 @@ public class DetailTempatScene extends AScene {
         labelKota.getStyleClass().add("text");
         Label labelKategori = new Label("Kategori");
         labelKategori.getStyleClass().add("text");
-        VBox VBoxTempatKey = new VBox(labelLokasi, labelKota, labelKategori);
+        Label labelRating = new Label("Rating");
+        labelRating.getStyleClass().add("text");
+        VBox VBoxTempatKey = new VBox(labelLokasi, labelKota, labelKategori, labelRating);
 
         Label labelLokasiValue = new Label(": " + tempatWisata.getLokasi());
         labelLokasiValue.getStyleClass().add("text");
@@ -80,7 +85,9 @@ public class DetailTempatScene extends AScene {
         labelKotaValue.getStyleClass().add("text");
         Label labelKategoriValue = new Label(": " + tempatWisata.getKategori());
         labelKategoriValue.getStyleClass().add("text");
-        VBox VBoxTempatValue = new VBox(labelLokasiValue, labelKotaValue, labelKategoriValue);
+        Label labelRatingValue = new Label(": " + totalRate);
+        labelRatingValue.getStyleClass().add("text");
+        VBox VBoxTempatValue = new VBox(labelLokasiValue, labelKotaValue, labelKategoriValue, labelRatingValue);
 
         HBox hBoxTempat = new HBox(VBoxTempatKey, VBoxTempatValue);
         hBoxTempat.setSpacing(10);
@@ -178,7 +185,7 @@ public class DetailTempatScene extends AScene {
     }
 
 
-    
+
     protected void show() {}
     protected void show(int id) {}
 }
