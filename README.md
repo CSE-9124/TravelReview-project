@@ -64,3 +64,27 @@ B. User
 [https://github.com/CSE-9124/TravelReview-project](https://github.com/CSE-9124/TravelReview-project)
 
 ## Screenshots
+### *Login Scene*
+![Login Scene](readme\LoginScene.jpg)
+
+### *Register Scene*
+![Register Scene](readme\RegisterScene.jpg)
+
+### *Home Scene*
+![Home Scene](readme\HomeScene.jpg)
+
+### *List Tempat Wisata Scene*
+![Daftar Tempat](readme\DaftarTempatWisata.jpg)
+
+### *Deskripsi Tempat Wisata Scene*
+![Detail Tempat](readme\DetailTempatWisata.jpg)
+
+### *Komentar dan Rating Scene*
+![Kommentar Rating](readme\RatingUlasan.jpg)
+
+### *Profile User Scene*
+![Profile Scene](readme\ProfileScene.jpg)
+
+## Pengujian Pada Aplikasi
+![Table1](readme\Table1.png)
+![Table2](readme\Table2.png)
