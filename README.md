@@ -65,26 +65,26 @@ B. User
 
 ## Screenshots
 ### *Login Scene*
-![Login Scene](readme\LoginScene.jpg)
+![Login Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/LoginScene.jpg)
 
 ### *Register Scene*
-![Register Scene](readme\RegisterScene.jpg)
+![Register Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/RegisterScene.jpg)
 
 ### *Home Scene*
-![Home Scene](readme\HomeScene.jpg)
+![Home Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/HomeScene.jpg)
 
 ### *List Tempat Wisata Scene*
-![Daftar Tempat](readme\DaftarTempatWisata.jpg)
+![Daftar Tempat](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/DaftarTempatWisata.jpg)
 
 ### *Deskripsi Tempat Wisata Scene*
-![Detail Tempat](readme\DetailTempatWisata.jpg)
+![Detail Tempat](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/DetailTempatWisata.jpg)
 
 ### *Komentar dan Rating Scene*
-![Kommentar Rating](readme\RatingUlasan.jpg)
+![Kommentar Rating](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/RatingUlasan.jpg)
 
 ### *Profile User Scene*
-![Profile Scene](readme\ProfileScene.jpg)
+![Profile Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/ProfileScene.jpg)
 
 ## Pengujian Pada Aplikasi
-![Table1](readme\Table1.png)
-![Table2](readme\Table2.png)
+![Table1](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/Table1.png)
+![Table2](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/Table2.png)
