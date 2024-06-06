@@ -3,10 +3,11 @@ package travelreview.project.Models;
 public class TempatWisata extends Model{
     private String nama, imagePath, lokasi, kota, kategori, deskripsi;
     private int jumlah_review;
+    private double total_rating;
 
     // Constructors
     public TempatWisata(int id, String nama, String imagePath, String lokasi, String kota, String kategori,
-            String deskripsi, int jumlah_review) {
+            String deskripsi, int jumlah_review, double total_rating) {
         super(id);
         this.nama = nama;
         this.imagePath = imagePath;
@@ -15,6 +16,7 @@ public class TempatWisata extends Model{
         this.kategori = kategori;
         this.deskripsi = deskripsi;
         this.jumlah_review = jumlah_review;
+        this.total_rating = total_rating;
     }
 
     // Getter & Settter
@@ -38,4 +40,7 @@ public class TempatWisata extends Model{
 
     public int getJumlah_review() {return jumlah_review;}
     public void setJumlah_review(int jumlah_review) {this.jumlah_review = jumlah_review;}
+
+    public double getTotal_rating() {return total_rating;}
+    public void setTotal_rating(double total_rating) {this.total_rating = total_rating;}
 }
