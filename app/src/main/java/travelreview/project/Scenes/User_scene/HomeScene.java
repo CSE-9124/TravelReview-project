@@ -98,6 +98,8 @@ public class HomeScene extends AScene{
             VBox vBoxNamaTempat = new VBox(labelNamaTempat, labelLokasi, labelRating);
             vBoxNamaTempat.setPadding(new Insets(10, 15, 15, 15));
             vBoxNamaTempat.setSpacing(5);
+            vBoxNamaTempat.setPrefWidth(250);
+            vBoxNamaTempat.setPrefHeight(100);
             vBoxNamaTempat.getStyleClass().add("card-detail");
 
             VBox vBoxTempat = new VBox(vBoxImageTempat, vBoxNamaTempat);

@@ -46,6 +46,7 @@ public class TempatListScene extends AScene{
         for (TempatWisata tempat : tempatWisataData) {
             ImageView imageViewTempat = new ImageView();
             imageViewTempat.setFitWidth(250);
+            imageViewTempat.setFitHeight(200);
             imageViewTempat.setPreserveRatio(true);
 
             if (tempat.getImagePath() != null && !tempat.getImagePath().isEmpty()) {
@@ -70,7 +71,7 @@ public class TempatListScene extends AScene{
 
             HBox hBoxTempat = new HBox(vBoxImageTempat, vBoxNamaTempat);
             hBoxTempat.setPrefWidth(750);
-            hBoxTempat.setPrefHeight(100);
+            hBoxTempat.setMaxHeight(100);
             hBoxTempat.getStyleClass().add("card");
 
             hBoxTempat.setOnMouseClicked(e -> {
@@ -92,6 +93,7 @@ public class TempatListScene extends AScene{
         ScrollPane scrollPane = new ScrollPane(vBoxMainContent);
         scrollPane.setFitToWidth(true);
         scrollPane.getStyleClass().add("scene");
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
         Navbar navbar = new Navbar();
         HBox hBoxContent = new HBox(navbar.getUserNavbar(stage, id), scrollPane);

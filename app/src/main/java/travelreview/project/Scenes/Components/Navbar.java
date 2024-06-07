@@ -3,12 +3,14 @@ package travelreview.project.Scenes.Components;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import travelreview.project.Scenes.LoginScene;
 import travelreview.project.Scenes.User_scene.HomeScene;
 import travelreview.project.Scenes.User_scene.ProfileScene;
@@ -76,10 +78,16 @@ public class Navbar {
         buttonHome.setOnMouseEntered(e -> {
             Image homeIconHover = new Image(getClass().getResourceAsStream("/images/navbar-icon/HomeIconHover.png"));
             homeIconView.setImage(homeIconHover);
+            Tooltip tooltip = new Tooltip("Home");
+            tooltip.setStyle("-fx-font-size: 13");
+            tooltip.setShowDelay(Duration.millis(100)); // Set the show delay to 100 milliseconds
+            tooltip.setShowDuration(Duration.INDEFINITE);
+            buttonHome.setTooltip(tooltip);
         });
 
         buttonHome.setOnMouseExited(e -> {
             homeIconView.setImage(homeIcon);
+            buttonHome.setTooltip(null);
         });
 
         buttonHome.setOnAction(e -> {
@@ -91,10 +99,16 @@ public class Navbar {
         buttonListTempat.setOnMouseEntered(e -> {
             Image listTempatIconHover = new Image(getClass().getResourceAsStream("/images/navbar-icon/ListIconHover.png"));
             listTempatIconView.setImage(listTempatIconHover);
+            Tooltip tooltip = new Tooltip("List Tempat Wisata");
+            tooltip.setStyle("-fx-font-size: 13");
+            tooltip.setShowDelay(Duration.millis(100)); // Set the show delay to 100 milliseconds
+            tooltip.setShowDuration(Duration.INDEFINITE);
+            buttonListTempat.setTooltip(tooltip);
         });
 
         buttonListTempat.setOnMouseExited(e -> {
             listTempatIconView.setImage(listTempatIcon);
+            buttonListTempat.setTooltip(null);
         });
 
         buttonListTempat.setOnAction(e -> {
@@ -106,10 +120,16 @@ public class Navbar {
         buttonProfile.setOnMouseEntered(e -> {
             Image profileIconHover = new Image(getClass().getResourceAsStream("/images/navbar-icon/ProfileIconHover.png"));
             profileIconView.setImage(profileIconHover);
+            Tooltip tooltip = new Tooltip("Profile");
+            tooltip.setStyle("-fx-font-size: 13");
+            tooltip.setShowDelay(Duration.millis(100)); // Set the show delay to 100 milliseconds
+            tooltip.setShowDuration(Duration.INDEFINITE);
+            buttonProfile.setTooltip(tooltip);
         });
 
         buttonProfile.setOnMouseExited(e -> {
             profileIconView.setImage(profileIcon);
+            buttonProfile.setTooltip(null);
         });
 
         buttonProfile.setOnAction(e -> {
@@ -121,16 +141,24 @@ public class Navbar {
         buttonLogout.setOnMouseEntered(e -> {
             Image logoutIconHover = new Image(getClass().getResourceAsStream("/images/navbar-icon/LogoutIconHover.png"));
             logoutIconView.setImage(logoutIconHover);
+            Tooltip tooltip = new Tooltip("Logout");
+            tooltip.setStyle("-fx-font-size: 13");
+            tooltip.setShowDelay(Duration.millis(100)); // Set the show delay to 100 milliseconds
+            tooltip.setShowDuration(Duration.INDEFINITE);
+            buttonLogout.setTooltip(tooltip);
         });
 
         buttonLogout.setOnMouseExited(e -> {
             logoutIconView.setImage(logoutIcon);
+            buttonLogout.setText("");
         });
 
         buttonLogout.setOnAction(e -> {
             LoginScene loginScene = new LoginScene(stage);
             loginScene.show();
         });
+        /* ==> BUTTON ACTION END <== */
+
         return navbar;
     }
 

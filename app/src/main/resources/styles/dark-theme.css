@@ -13,7 +13,7 @@
 
 /* ==> Style for LoginScene and RegisterScene <== */
 .text-link {
-    -fx-text-fill: #ffa200;
+    -fx-text-fill: #F0651F;
 }
 
 .text-status {
@@ -36,7 +36,7 @@
 }
 
 .loginbutton:hover {
-    -fx-background-color: #ffa200;
+    -fx-background-color: #F0651F;
     -fx-text-fill: rgb(0, 0, 0);
 }
 
@@ -53,7 +53,7 @@
 }
 
 .registerbutton:hover {
-    -fx-background-color: #ffa200;
+    -fx-background-color: #F0651F;
     -fx-text-fill: rgb(0, 0, 0);
 }
 
@@ -83,7 +83,7 @@
 }
 
 .profileField:hover {
-    -fx-border-color: #ffa200;
+    -fx-border-color: #F0651F;
 }
 
 .profileUpdateButton {
@@ -96,7 +96,7 @@
 }
 
 .profileUpdateButton:hover {
-    -fx-background-color: #ffa200;
+    -fx-background-color: #F0651F;
     -fx-text-fill: rgb(0, 0, 0);
 }
 
@@ -109,7 +109,7 @@
 }
 
 .card:hover {
-    -fx-border-color: #ffa200;
+    -fx-border-color: #F0651F;
 }
 
 .card-detail {
