@@ -8,8 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-// import travelreview.project.Scenes.LoginScene;
-import travelreview.project.Scenes.User_scene.HomeScene;
+import travelreview.project.Scenes.LoginScene;
+// import travelreview.project.Scenes.User_scene.HomeScene;
 // import travelreview.project.Scenes.User_scene.ProfileScene;
 // import travelreview.project.Scenes.User_scene.TempatListScene;
 
@@ -29,10 +29,10 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
 
-        // LoginScene loginScene = new LoginScene(stage);
-        // loginScene.show();
-        HomeScene homeScene = new HomeScene(stage);
-        homeScene.show(2);
+        LoginScene loginScene = new LoginScene(stage);
+        loginScene.show();
+        // HomeScene homeScene = new HomeScene(stage);
+        // homeScene.show(10);
         // TempatListScene tempatListScene = new TempatListScene(stage);
         // tempatListScene.show(1);
         // ProfileScene profileScene = new ProfileScene(stage);

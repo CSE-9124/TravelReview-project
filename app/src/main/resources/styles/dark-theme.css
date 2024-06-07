@@ -22,14 +22,38 @@
 
 .textfield {
     -fx-max-width: 350px;
-    -fx-background-color: #333333;
+    -fx-background-color: transparent;
     -fx-text-fill: #ffffff;
     -fx-prompt-text-fill: #ffffff;
+    -fx-border-radius: 3px;
+    -fx-border-color: #bababa;
+    -fx-border-width: 0.5px;
+}
+
+.passwordfield-show {
+    -fx-max-width: 350px;
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #ffffff;
+    -fx-border-radius: 3px;
+    -fx-border-color: #bababa;
+    -fx-border-width: 0.5px;
+}
+
+.passwordfield-hide {
+    -fx-max-width: 350px;
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #ffffff;
+    -fx-border-radius: 3px;
+    -fx-border-color: #bababa;
+    -fx-border-width: 0.5px;
 }
 
 .loginbutton {
     -fx-background-color: white;
     -fx-text-fill: rgb(0, 0, 0);
+    -fx-font-family: "Arial";
     -fx-font-weight: bold;
     -fx-font-size: 12px;
     -fx-background-radius: 20px;
@@ -59,6 +83,10 @@
 
 .registerbutton:disabled {
     -fx-text-fill: rgba(0, 0, 0, 0.856);
+}
+
+.eye-button {
+    -fx-background-color: transparent;
 }
 
 
