@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import travelreview.project.Abstract.AScene;
@@ -118,7 +119,12 @@ public class DetailTempatScene extends AScene {
                 Label labelCommentValue = new Label(comment.getText());
                 labelCommentValue.setWrapText(true);
                 labelCommentValue.getStyleClass().add("text");
-                VBox vBoxComment = new VBox(labelUserComment, labelCommentValue);
+
+                Label labelCommentRating = new Label("Rating: " + comment.getStar());
+                labelCommentRating.setFont(Font.font("Sytem", FontWeight.NORMAL, 12));
+                labelCommentRating.getStyleClass().add("text");
+
+                VBox vBoxComment = new VBox(labelUserComment, labelCommentRating, labelCommentValue);
                 vBoxComment.getStyleClass().add("comment");
                 vboxUsersComment.getChildren().add(vBoxComment);
             }

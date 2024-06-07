@@ -64,7 +64,10 @@ public class TempatListScene extends AScene{
             labelNamaTempat.getStyleClass().add("text");
             Label labelLokasi = new Label(tempat.getLokasi() + ", " + tempat.getKota());
             labelLokasi.getStyleClass().add("text");
-            VBox vBoxNamaTempat = new VBox(labelNamaTempat, labelLokasi);
+            Label labelRating = new Label("Rate : ⭐" + tempat.getTotal_rating());
+            labelRating.setFont(Font.font("Sytem", FontWeight.BOLD, 14));
+            labelRating.getStyleClass().add("text");
+            VBox vBoxNamaTempat = new VBox(labelNamaTempat, labelRating, labelLokasi);
             vBoxNamaTempat.setPadding(new Insets(10, 15, 15, 15));
             vBoxNamaTempat.setSpacing(5);
             vBoxNamaTempat.getStyleClass().add("card-detail");
