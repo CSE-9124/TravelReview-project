@@ -11,4 +11,13 @@ public class RateUtils {
         }
     }
 
+    public static double calculateRatingAverageDouble(int totalRates, double valueRate) {
+        if (totalRates > 0) {
+            double average = valueRate / totalRates;
+            return Math.round(average * 10.0) / 10.0;
+        }
+        else{
+            return 0;
+        }
+    }
 }

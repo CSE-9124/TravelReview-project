@@ -41,7 +41,6 @@ public class DetailTempatScene extends AScene {
 
         List<Comment> comments = CommentsController.getAllCommentsByTempatWisataId(tempatWisataId);
 
-        String totalRate = RateUtils.calculateRatingAverage(TempatWisataController.getJumlahReview(tempatWisataId), CommentsController.getTotalRatingByTempatWisataId(tempatWisataId));
 
         /* ==> INSTANCE LAYOUT START <== */
         Label labelTitle = new Label("Detail Tempat Wisata");
@@ -85,7 +84,7 @@ public class DetailTempatScene extends AScene {
         labelKotaValue.getStyleClass().add("text");
         Label labelKategoriValue = new Label(": " + tempatWisata.getKategori());
         labelKategoriValue.getStyleClass().add("text");
-        Label labelRatingValue = new Label(": " + totalRate);
+        Label labelRatingValue = new Label(": " + tempatWisata.getTotal_rating());
         labelRatingValue.getStyleClass().add("text");
         VBox VBoxTempatValue = new VBox(labelLokasiValue, labelKotaValue, labelKategoriValue, labelRatingValue);
 
@@ -159,6 +158,7 @@ public class DetailTempatScene extends AScene {
         ScrollPane scrollPane = new ScrollPane(vBoxMainContent);
         scrollPane.setFitToWidth(true);
         scrollPane.getStyleClass().add("scene");
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
         Navbar navbar = new Navbar();
         HBox hBoxContent = new HBox(navbar.getUserNavbar(stage, id), scrollPane);
@@ -175,8 +175,12 @@ public class DetailTempatScene extends AScene {
                 if (CommentsController.addComment(text, user.getId(), tempatWisataId, comboBoxRating.getValue())) {
                     int jumlahReview = TempatWisataController.getJumlahReview(tempatWisataId);
                     if (TempatWisataController.updateJumlahReview(tempatWisataId, jumlahReview + 1)) {
+                        jumlahReview++;
+                        double totalRate = RateUtils.calculateRatingAverageDouble(jumlahReview, CommentsController.getTotalRatingByTempatWisataId(tempatWisataId));
+                        if (TempatWisataController.updateTotalRating(tempatWisataId, totalRate)) {
                         DetailTempatScene detailTempatScene = new DetailTempatScene(stage);
                         detailTempatScene.show(id, tempatWisataId);
+                        }
                     }
                 }
             }

@@ -153,4 +153,19 @@ public class TempatWisataController extends DbConfig {
         }
         return false;
     }
+
+    public static boolean updateTotalRating(int id, double totalRating) {
+        query = "UPDATE tempat_wisata SET total_rating=? WHERE id=?";
+        try {
+            getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setDouble(1, totalRating);
+            preparedStatement.setInt(2, id);
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
