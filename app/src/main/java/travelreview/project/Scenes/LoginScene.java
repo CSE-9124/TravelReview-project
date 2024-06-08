@@ -72,13 +72,13 @@ public class LoginScene extends AScene {
         labelPassword.getStyleClass().add("text");
         PasswordField passwordField = new PasswordField();
         passwordField.setPromptText("Masukkan password");
-        passwordField.setPrefWidth(350);
+        passwordField.setPrefWidth(360);
         passwordField.setPrefHeight(35);
         passwordField.getStyleClass().add("textfield");
 
         TextField passwordShowField = new TextField();
         passwordShowField.setPromptText("Masukkan password");
-        passwordShowField.setPrefWidth(350);
+        passwordShowField.setPrefWidth(360);
         passwordShowField.setPrefHeight(35);
         passwordShowField.setManaged(false);
         passwordShowField.setVisible(false);
@@ -100,7 +100,7 @@ public class LoginScene extends AScene {
         buttonLogin.setPrefWidth(150);
         buttonLogin.setPrefHeight(35);
         buttonLogin.getStyleClass().add("loginbutton");
-        VBox.setMargin(buttonLogin, new Insets(0, 0, 0, 200));
+        VBox.setMargin(buttonLogin, new Insets(0, 0, 0, 210));
 
         Label text = new Label("Belum punya akun?");
         text.getStyleClass().add("text");
@@ -111,12 +111,13 @@ public class LoginScene extends AScene {
         labelRegister.setAlignment(Pos.CENTER);
         VBox vBoxRegister = new VBox(labelRegister);
         vBoxRegister.setAlignment(Pos.CENTER);
-        vBoxRegister.setPadding(new Insets(0, 0, 10, 80));
+        vBoxRegister.setPadding(new Insets(0, 0, 10, 82));
 
         VBox vBoxInputLogin = new VBox(vBoxEmail, vBoxPassword, vBoxRegister, buttonLogin);
         vBoxInputLogin.setSpacing(10);
 
         Label labelStatus = new Label();
+        labelStatus.setFont(Font.font("Arial", 14));
         labelStatus.setAlignment(Pos.CENTER);
         labelStatus.getStyleClass().add("text-status");
 
@@ -127,17 +128,17 @@ public class LoginScene extends AScene {
         vBoxMainContent.setAlignment(Pos.CENTER);
         vBoxMainContent.getStyleClass().add("scene");
 
-        Image imageCity = new Image(getClass().getResourceAsStream("/images/city.jpg"));
-        ImageView imageViewCity = new ImageView(imageCity);
+        Image imageSunset = new Image(getClass().getResourceAsStream("/images/sunset.jpg"));
+        ImageView imageViewSunset = new ImageView(imageSunset);
         // Set the image fit-content contain
-        imageViewCity.setPreserveRatio(true);
-        imageViewCity.setFitWidth(420);
-        imageViewCity.setFitHeight(580);
-        VBox vBoxImageCity = new VBox(imageViewCity);
-        vBoxImageCity.setAlignment(Pos.CENTER);
-        vBoxImageCity.setBackground(new Background(new BackgroundFill(Color.web("#090f30"), null, null)));
+        imageViewSunset.setFitWidth(420);
+        imageViewSunset.setFitHeight(580);
+        imageViewSunset.setPreserveRatio(true);
+        VBox vBoxImageSunset = new VBox(imageViewSunset);
+        vBoxImageSunset.setAlignment(Pos.CENTER);
+        vBoxImageSunset.setBackground(new Background(new BackgroundFill(Color.web("#090f30"), null, null)));
 
-        HBox root = new HBox(vBoxImageCity, vBoxMainContent);
+        HBox root = new HBox(vBoxImageSunset, vBoxMainContent);
         stage.getScene().setRoot(root);
         // stage.getScene().getStylesheets().add(getClass().getResource("/styles/dark-theme.css").toExternalForm());
         /* ==> INSTANCE LAYOUT END <== */
@@ -173,20 +174,6 @@ public class LoginScene extends AScene {
             RegisterScene registerScene = new RegisterScene(stage);
             registerScene.show();
         });
-        /* ==> BUTTON ACTION END <== */
-
-        /* ==> KEY ACTION START <== */
-        textFieldEmail.setOnKeyPressed(event -> {
-            if (event.getCode() == KeyCode.ENTER) {
-                passwordField.requestFocus();
-            }
-        });
-
-        passwordField.setOnKeyPressed(event -> {
-            if (event.getCode() == KeyCode.ENTER) {
-                buttonLogin.fire();
-            }
-        });
 
         buttonEye.setOnAction(e -> {
             if (passwordField.isVisible()) {
@@ -217,11 +204,35 @@ public class LoginScene extends AScene {
                 buttonEye.setGraphic(imageViewCloseEye);
             }
         });
+        /* ==> BUTTON ACTION END <== */
+        
+        /* ==> KEY ACTION START <== */
+        textFieldEmail.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                if (passwordField.isVisible()) {
+                    passwordField.requestFocus();
+                } else {
+                    passwordShowField.requestFocus();
+                }
+            }
+        });
+
+        passwordField.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                buttonLogin.fire();
+            }
+        });
+
+        passwordShowField.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                buttonLogin.fire();
+            }
+        });
+        /* ==> KEY ACTION END <== */
     }
 
-    @Override
-    protected void show(int id) {}
 
-    @Override
+
+    protected void show(int id) {}
     protected void show(int id, int tempatWisataId) {}
 }

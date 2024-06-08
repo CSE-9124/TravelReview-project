@@ -74,7 +74,7 @@ public class ProfileScene extends AScene {
         buttonUpdate.setPrefWidth(200);
         buttonUpdate.getStyleClass().add("profileUpdateButton");
 
-        VBox vBoxDetailProfile = new VBox(vBoxUsername, vBoxName, vBoxAge, vBoxPhoneNumber, vBoxEmail, buttonUpdate);
+        VBox vBoxDetailProfile = new VBox(vBoxUsername, vBoxName, vBoxEmail, vBoxAge, vBoxPhoneNumber, buttonUpdate);
         vBoxDetailProfile.setSpacing(10);
         vBoxDetailProfile.setPrefWidth(750);
 

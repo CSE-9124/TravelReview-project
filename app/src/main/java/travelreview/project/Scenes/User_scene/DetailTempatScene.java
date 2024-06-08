@@ -15,7 +15,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import travelreview.project.Abstract.AScene;
@@ -85,7 +84,7 @@ public class DetailTempatScene extends AScene {
         labelKotaValue.getStyleClass().add("text");
         Label labelKategoriValue = new Label(": " + tempatWisata.getKategori());
         labelKategoriValue.getStyleClass().add("text");
-        Label labelRatingValue = new Label(": " + tempatWisata.getTotal_rating());
+        Label labelRatingValue = new Label(": ⭐" + tempatWisata.getTotal_rating());
         labelRatingValue.getStyleClass().add("text");
         VBox VBoxTempatValue = new VBox(labelLokasiValue, labelKotaValue, labelKategoriValue, labelRatingValue);
 
@@ -120,11 +119,14 @@ public class DetailTempatScene extends AScene {
                 labelCommentValue.setWrapText(true);
                 labelCommentValue.getStyleClass().add("text");
 
-                Label labelCommentRating = new Label("Rating: " + comment.getStar());
-                labelCommentRating.setFont(Font.font("Sytem", FontWeight.NORMAL, 12));
+                Label labelCommentRating = new Label("(Rating: ⭐" + comment.getStar() + ")");
+                labelCommentRating.setFont(Font.font("Sytem", FontWeight.NORMAL, 11));
                 labelCommentRating.getStyleClass().add("text");
 
-                VBox vBoxComment = new VBox(labelUserComment, labelCommentRating, labelCommentValue);
+                HBox hBoxCommentUser = new HBox(labelUserComment, labelCommentRating);
+                hBoxCommentUser.setSpacing(10);
+
+                VBox vBoxComment = new VBox(hBoxCommentUser, labelCommentValue);
                 vBoxComment.getStyleClass().add("comment");
                 vboxUsersComment.getChildren().add(vBoxComment);
             }

@@ -11,6 +11,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -60,19 +62,31 @@ public class TempatListScene extends AScene{
             vBoxImageTempat.setAlignment(Pos.CENTER);
 
             Label labelNamaTempat = new Label(tempat.getNama());
-            labelNamaTempat.setFont(Font.font("Sytem", FontWeight.BOLD, 16));
+            labelNamaTempat.setFont(Font.font("Sytem", FontWeight.BOLD, 19));
             labelNamaTempat.getStyleClass().add("text");
             Label labelLokasi = new Label(tempat.getLokasi() + ", " + tempat.getKota());
             labelLokasi.getStyleClass().add("text");
+            
             Label labelRating = new Label("Rate : ⭐" + tempat.getTotal_rating());
-            labelRating.setFont(Font.font("Sytem", FontWeight.BOLD, 14));
-            labelRating.getStyleClass().add("text");
-            VBox vBoxNamaTempat = new VBox(labelNamaTempat, labelRating, labelLokasi);
+            labelRating.setFont(Font.font("Sytem", FontWeight.BOLD, 20));
+            labelRating.setAlignment(Pos.CENTER_RIGHT);
+            labelRating.getStyleClass().add("title");
+
+            Region spacer = new Region();
+            HBox.setHgrow(spacer, Priority.ALWAYS);
+
+            HBox hBoxRating = new HBox(labelRating);
+            hBoxRating.setAlignment(Pos.BOTTOM_RIGHT);
+            hBoxRating.setPadding(new Insets(10, 15, 15, 15));
+            hBoxRating.getStyleClass().add("card-detail");
+
+            
+            VBox vBoxNamaTempat = new VBox(labelNamaTempat, labelLokasi);
             vBoxNamaTempat.setPadding(new Insets(10, 15, 15, 15));
             vBoxNamaTempat.setSpacing(5);
             vBoxNamaTempat.getStyleClass().add("card-detail");
-
-            HBox hBoxTempat = new HBox(vBoxImageTempat, vBoxNamaTempat);
+            
+            HBox hBoxTempat = new HBox(vBoxImageTempat, vBoxNamaTempat, spacer, hBoxRating);
             hBoxTempat.setPrefWidth(750);
             hBoxTempat.setMaxHeight(100);
             hBoxTempat.getStyleClass().add("card");
