@@ -1,6 +1,9 @@
 /* Dark Theme */
 .scene {
     -fx-background-color: #1a1a1a;
+
+    /* Standard Property */
+    background-color: #1a1a1a;
 }
 
 .title {
@@ -21,33 +24,54 @@
 }
 
 .textfield {
-    -fx-max-width: 350px;
+    -fx-max-width: 360px;
     -fx-background-color: transparent;
     -fx-text-fill: #ffffff;
     -fx-prompt-text-fill: #ffffff;
     -fx-border-radius: 3px;
     -fx-border-color: #bababa;
     -fx-border-width: 0.5px;
+
+    /* Standard Property */
+    max-width: 360px;
+    background-color: transparent;
+    border-radius: 3px;
+    border-color: #bababa;
+    border-width: 0.5px;
 }
 
 .passwordfield-show {
-    -fx-max-width: 350px;
+    -fx-max-width: 360px;
     -fx-background-color: transparent;
     -fx-text-fill: #ffffff;
     -fx-prompt-text-fill: #ffffff;
     -fx-border-radius: 3px;
     -fx-border-color: #bababa;
     -fx-border-width: 0.5px;
+
+    /* Standard Property */
+    max-width: 360px;
+    background-color: transparent;
+    border-radius: 3px;
+    border-color: #bababa;
+    border-width: 0.5px;
 }
 
 .passwordfield-hide {
-    -fx-max-width: 350px;
+    -fx-max-width: 360px;
     -fx-background-color: transparent;
     -fx-text-fill: #ffffff;
     -fx-prompt-text-fill: #ffffff;
     -fx-border-radius: 3px;
     -fx-border-color: #bababa;
     -fx-border-width: 0.5px;
+
+    /* Standard Property */
+    max-width: 360px;
+    background-color: transparent;
+    border-radius: 3px;
+    border-color: #bababa;
+    border-width: 0.5px;
 }
 
 .loginbutton {
@@ -57,11 +81,20 @@
     -fx-font-weight: bold;
     -fx-font-size: 12px;
     -fx-background-radius: 20px;
+
+    /* Standard Property */
+    background-color: white;
+    font-family: "Arial";
+    font-weight: bold;
+    font-size: 12px;
 }
 
 .loginbutton:hover {
     -fx-background-color: #F0651F;
     -fx-text-fill: rgb(0, 0, 0);
+
+    /* Standard Property */
+    background-color: #F0651F;
 }
 
 .loginbutton:disabled {
@@ -74,11 +107,19 @@
     -fx-font-weight: bold;
     -fx-font-size: 12px;
     -fx-background-radius: 20px;
+
+    /* Standard Property */
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 12px;
 }
 
 .registerbutton:hover {
     -fx-background-color: #F0651F;
     -fx-text-fill: rgb(0, 0, 0);
+
+    /* Standard Property */
+    background-color: #F0651F;
 }
 
 .registerbutton:disabled {
@@ -87,31 +128,69 @@
 
 .eye-button {
     -fx-background-color: transparent;
+
+    /* Standard Property */
+    background-color: transparent;
 }
 
 
 /* ==> Style for Navbar <== */
 .navbar {
     -fx-background-color: #000000;
+
+    /* Standard Property */
+    background-color: #000000;
 }
 
 .navbarbutton {
     -fx-background-color: transparent;
     -fx-pref-width: 90px;
     -fx-padding: 10px 0px;
+
+    /* Standard Property */
+    background-color: transparent;
+    padding: 10px 0px;
+}
+
+/* ==> Style for Header <== */
+.header {
+    -fx-background-color: #1a1a1a;
+    -fx-border-color: #bababa;
+    -fx-border-width: 0px 0px 1px 0px;
+
+    /* Standard Property */
+    background-color: #1a1a1a;
+    border-color: #bababa;
+    border-width: 0px 0px 0.5px 0px;
+}
+
+.username-shadow {
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
+
 }
 
 
 /* ==> Style for ProfileScene <== */
 .profileField {
     -fx-background-color: #333333;
+    -fx-max-width: 260px;
     -fx-text-fill: #ffffff;
     -fx-border-color: #ffffff;
     -fx-border-width: 0px 0px 1px 0px;
+
+    /* Standard Property */
+    background-color: #333333;
+    max-width: 260px;
+    border-color: #ffffff;
+    border-width: 0px 0px 1px 0px;
 }
 
 .profileField:hover {
     -fx-border-color: #F0651F;
+
+    /* Standard Property */
+    border-color: #F0651F;
 }
 
 .profileUpdateButton {
@@ -121,11 +200,31 @@
     -fx-font-size: 12px;
     -fx-background-radius: 20px;
     -fx-height: 30px;
+
+    /* Standard Property */
+    background-color: white;
+    font-weight: bold;
+    font-size: 12px;
+    height: 30px;
 }
 
 .profileUpdateButton:hover {
     -fx-background-color: #F0651F;
     -fx-text-fill: rgb(0, 0, 0);
+
+    /* Standard Property */
+    background-color: #F0651F;
+}
+
+.rectangle {
+    -fx-fill: #F0651F;
+    -fx-border-width: 2px;
+    -fx-border-height: 3px;
+
+    /* Standard Property */
+    fill: #F0651F;
+    border-width: 2px;
+    border-radius: 5px;
 }
 
 /* ==> Style for TempatListScene <== */
@@ -134,14 +233,26 @@
     -fx-border-color: #ffffff; 
     -fx-border-width: 2px; 
     -fx-border-radius: 5px;
+
+    /* Standard Property */
+    background-color: #000000;
+    border-color: #ffffff;
+    border-width: 2px;
+    border-radius: 5px;
 }
 
 .card:hover {
     -fx-border-color: #F0651F;
+
+    /* Standard Property */
+    border-color: #F0651F;
 }
 
 .card-detail {
     -fx-background-color: #000000;
+
+    /* Standard Property */
+    background-color: #000000;
 }
 
 /* ==> Style for DetailTempatScene <== */
@@ -150,6 +261,12 @@
     -fx-border-color: #ffffff;
     -fx-border-width: 0px, 0px, 1px, 0px;
     -fx-border-radius: 5px;
+
+    /* Standard Property */
+    background-color: #333333;
+    border-color: #ffffff;
+    border-width: 0px, 0px, 1px, 0px;
+    border-radius: 5px;
 }
 
 .commentField {
@@ -157,6 +274,11 @@
     -fx-text-fill: #ffffff;
     -fx-border-color: #ffffff;
     -fx-border-width: 0px 0px 1px 0px;
+
+    /* Standard Property */
+    background-color: transparent;
+    border-color: #ffffff;
+    border-width: 0px 0px 1px 0px;
 }
 
 /* Add more styles for your scene here */
