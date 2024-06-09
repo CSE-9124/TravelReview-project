@@ -43,7 +43,7 @@ public class LoginScene extends AScene {
         VBox vBoxLogin = new VBox(labelTitle, labelLogin);
         vBoxLogin.setSpacing(1);
         
-        Image logoTitle = new Image(getClass().getResourceAsStream("/images/OIG1.jpg"));
+        Image logoTitle = new Image(getClass().getResourceAsStream("/images/LOGO.jpg"));
         ImageView logoViewTitle = new ImageView(logoTitle);
         logoViewTitle.setFitWidth(50);
         logoViewTitle.setFitHeight(50);

@@ -22,6 +22,7 @@ import travelreview.project.Controllers.TempatWisataController;
 import travelreview.project.Controllers.UsersController;
 import travelreview.project.Models.TempatWisata;
 import travelreview.project.Models.User;
+import travelreview.project.Scenes.Components.Header;
 import travelreview.project.Scenes.Components.Navbar;
 
 public class HomeScene extends AScene{
@@ -37,9 +38,9 @@ public class HomeScene extends AScene{
         User user = UsersController.getUserById(id);
 
         /* ==> INSTANCE LAYOUT START <== */
-        Label labelTitle = new Label("Beranda");
-        labelTitle.setFont(Font.font("Sytem", FontWeight.BOLD, 24));
-        labelTitle.getStyleClass().add("title");
+        // Label labelTitle = new Label("Beranda");
+        // labelTitle.setFont(Font.font("Sytem", FontWeight.BOLD, 24));
+        // labelTitle.getStyleClass().add("title");
 
         Label labelWelcome = new Label("Selamat Datang di TravelReview");
         labelWelcome.setFont(Font.font("Sytem", FontWeight.BOLD, 28));
@@ -49,7 +50,7 @@ public class HomeScene extends AScene{
         labelName.getStyleClass().add("text");
         VBox vBoxWelcome = new VBox(labelWelcome, labelName);
         vBoxWelcome.setAlignment(Pos.CENTER);
-        vBoxWelcome.setPadding(new Insets(100, 0, 0, 0));
+        vBoxWelcome.setPadding(new Insets(90, 0, 0, 0));
         vBoxWelcome.setSpacing(5);
 
         Label recomendLabel = new Label("Rekomendasi Tempat Wisata :");
@@ -129,14 +130,18 @@ public class HomeScene extends AScene{
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
-        VBox vBoxMainContent = new VBox(labelTitle, vBoxWelcome, recomendLabel, scrollPane);
+        VBox vBoxMainContent = new VBox(vBoxWelcome, recomendLabel, scrollPane);
         vBoxMainContent.setPadding(new Insets(10));
         vBoxMainContent.setSpacing(10);
         vBoxMainContent.setPrefWidth(750);
+        vBoxMainContent.setPrefHeight(510);
         vBoxMainContent.getStyleClass().add("scene");
 
+        Header header = new Header();
+        VBox vBoxHeader = new VBox(header.getHeader(user), vBoxMainContent);
+
         Navbar navbar = new Navbar();
-        HBox hBoxContent = new HBox(navbar.getUserNavbar(stage, id), vBoxMainContent);
+        HBox hBoxContent = new HBox(navbar.getUserNavbar(stage, id), vBoxHeader);
         
 
         HBox root = new HBox(hBoxContent);

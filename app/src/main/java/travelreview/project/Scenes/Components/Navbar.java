@@ -20,7 +20,7 @@ public class Navbar {
     public VBox getUserNavbar(Stage stage, int id) {
         /* ==> INSTANCE LAYOUT START <== */
 
-        Image logoApp = new Image(getClass().getResourceAsStream("/images/OIG1.jpg"));
+        Image logoApp = new Image(getClass().getResourceAsStream("/images/LOGO.jpg"));
         ImageView logoViewApp = new ImageView(logoApp);
         logoViewApp.setFitWidth(50);
         logoViewApp.setFitHeight(50);

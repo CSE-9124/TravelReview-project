@@ -11,7 +11,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -19,11 +18,11 @@ import travelreview.project.Models.User;
 
 public class Header {
     public HBox getHeader(User user) {
-        Label labelTitle = new Label("TravelReview");
-        labelTitle.setTextFill(Color.WHITE);
-        labelTitle.setFont(Font.font("Arial", FontWeight.BLACK, 30));
-        VBox vBoxTitle = new VBox(labelTitle);
-        vBoxTitle.setAlignment(Pos.CENTER);
+        // Label labelTitle = new Label("TravelReview");
+        // labelTitle.setTextFill(Color.WHITE);
+        // labelTitle.setFont(Font.font("Arial", FontWeight.BLACK, 30));
+        // VBox vBoxTitle = new VBox(labelTitle);
+        // vBoxTitle.setAlignment(Pos.CENTER);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
@@ -63,7 +62,7 @@ public class Header {
         hBoxProfile.setAlignment(Pos.CENTER);
         hBoxProfile.setSpacing(10);
 
-        HBox header = new HBox(vBoxTitle, spacer, hBoxProfile);
+        HBox header = new HBox(spacer, hBoxProfile);
         header.setPrefHeight(70);
         header.getStyleClass().add("header");
         header.setPadding(new Insets(15));

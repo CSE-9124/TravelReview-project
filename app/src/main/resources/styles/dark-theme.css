@@ -155,13 +155,9 @@
 /* ==> Style for Header <== */
 .header {
     -fx-background-color: #1a1a1a;
-    -fx-border-color: #bababa;
-    -fx-border-width: 0px 0px 1px 0px;
 
     /* Standard Property */
     background-color: #1a1a1a;
-    border-color: #bababa;
-    border-width: 0px 0px 0.5px 0px;
 }
 
 .username-shadow {

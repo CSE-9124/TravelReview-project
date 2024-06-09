@@ -41,7 +41,7 @@ public class RegisterScene extends AScene{
         VBox vBoxRegister = new VBox(labelTitle, labelRegister);
         vBoxRegister.setSpacing(1);
 
-        Image logoTitle = new Image(getClass().getResourceAsStream("/images/OIG1.jpg"));
+        Image logoTitle = new Image(getClass().getResourceAsStream("/images/LOGO.jpg"));
         ImageView logoViewTitle = new ImageView(logoTitle);
         logoViewTitle.setFitWidth(50);
         logoViewTitle.setFitHeight(50);

@@ -43,12 +43,12 @@ public class DetailTempatScene extends AScene {
 
 
         /* ==> INSTANCE LAYOUT START <== */
-        Label labelTitle = new Label("Detail Tempat Wisata");
-        labelTitle.setFont(Font.font("Sytem", FontWeight.BOLD, 24));
-        labelTitle.getStyleClass().add("title");
+        // Label labelTitle = new Label("Detail Tempat Wisata");
+        // labelTitle.setFont(Font.font("Sytem", FontWeight.BOLD, 24));
+        // labelTitle.getStyleClass().add("title");
 
         Label labelName = new Label(tempatWisata.getNama());
-        labelName.setFont(Font.font("Sytem", FontWeight.BOLD, 24));
+        labelName.setFont(Font.font("Sytem", FontWeight.BOLD, 30));
         labelName.getStyleClass().add("title");
         VBox vBoxName = new VBox(labelName);
         vBoxName.setAlignment(Pos.CENTER);
@@ -68,15 +68,24 @@ public class DetailTempatScene extends AScene {
         VBox vBoxImageTempat = new VBox(imageViewTempat);
         vBoxImageTempat.setAlignment(Pos.CENTER);
 
+        Label labelRating = new Label("Rate");
+        labelRating.setFont(Font.font("Sytem", FontWeight.BOLD, 20));
+        labelRating.getStyleClass().add("text");
+        Label labelRatingValue = new Label(": ⭐" + tempatWisata.getTotal_rating());
+        labelRatingValue.setFont(Font.font("Sytem", FontWeight.BOLD, 20));
+        labelRatingValue.getStyleClass().add("text");
+
+        HBox hBoxRating = new HBox(labelRating, labelRatingValue);
+        hBoxRating.setSpacing(10);
+        hBoxRating.setPadding(new Insets(0, 20, 0, 20));
+
         Label labelLokasi = new Label("Lokasi");
         labelLokasi.getStyleClass().add("text");
         Label labelKota = new Label("Kota");
         labelKota.getStyleClass().add("text");
         Label labelKategori = new Label("Kategori");
         labelKategori.getStyleClass().add("text");
-        Label labelRating = new Label("Rating");
-        labelRating.getStyleClass().add("text");
-        VBox VBoxTempatKey = new VBox(labelLokasi, labelKota, labelKategori, labelRating);
+        VBox VBoxTempatKey = new VBox(labelLokasi, labelKota, labelKategori);
 
         Label labelLokasiValue = new Label(": " + tempatWisata.getLokasi());
         labelLokasiValue.getStyleClass().add("text");
@@ -84,9 +93,7 @@ public class DetailTempatScene extends AScene {
         labelKotaValue.getStyleClass().add("text");
         Label labelKategoriValue = new Label(": " + tempatWisata.getKategori());
         labelKategoriValue.getStyleClass().add("text");
-        Label labelRatingValue = new Label(": ⭐" + tempatWisata.getTotal_rating());
-        labelRatingValue.getStyleClass().add("text");
-        VBox VBoxTempatValue = new VBox(labelLokasiValue, labelKotaValue, labelKategoriValue, labelRatingValue);
+        VBox VBoxTempatValue = new VBox(labelLokasiValue, labelKotaValue, labelKategoriValue);
 
         HBox hBoxTempat = new HBox(VBoxTempatKey, VBoxTempatValue);
         hBoxTempat.setSpacing(10);
@@ -157,7 +164,7 @@ public class DetailTempatScene extends AScene {
         VBox vBoxComments = new VBox(labelComment, vboxUsersComment, vBoxPostComment);
         vBoxComments.setSpacing(10);
 
-        VBox vBoxMainContent = new VBox(labelTitle, vBoxName, vBoxImageTempat, hBoxTempat, vBoxDeskripsi, vBoxComments);
+        VBox vBoxMainContent = new VBox(vBoxName, vBoxImageTempat, hBoxRating, hBoxTempat, vBoxDeskripsi, vBoxComments);
         vBoxMainContent.setPadding(new Insets(10));
         vBoxMainContent.setSpacing(15);
         vBoxMainContent.setPrefWidth(750);
