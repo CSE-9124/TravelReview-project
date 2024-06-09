@@ -152,6 +152,13 @@
     padding: 10px 0px;
 }
 
+.admin-navbar {
+    -fx-background-color: #F0651F;
+
+    /* Standard Property */
+    background-color: #F0651F;
+}
+
 /* ==> Style for Header <== */
 .header {
     -fx-background-color: #1a1a1a;
@@ -277,4 +284,164 @@
     border-width: 0px 0px 1px 0px;
 }
 
-/* Add more styles for your scene here */
+/* ==> Style for TabelListScene <== */
+.table-view {
+    -fx-background-color: #000000;
+    /* -fx-table-cell-border-color: transparent; */
+    
+
+    /* Standard Property */
+    background-color: #000000;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #F0651F;
+
+    /* Standard Property */
+    background-color: #F0651F;
+}
+
+.table-view .column-header {
+    -fx-background-color: #F0651F;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+
+    /* Standard Property */
+    background-color: #F0651F;
+    font-weight: bold;
+}
+
+.table-view .table-cell {
+    -fx-background-color: #1a1a1a;
+    -fx-text-fill: #ffffff;
+    -fx-alignment: center; /* Added alignment property */
+
+    /* Standard Property */
+    background-color: #1a1a1a;
+    text-align: center; /* Added alignment property */
+}
+
+.table-view .table-row-cell{
+    -fx-background-color: #1a1a1a;
+    -fx-border-color: white;
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-text-fill: #e0e0e0;
+    -fx-font-size: 14px;
+
+    /* Standard Property */
+    background-color: #1a1a1a;
+    border-color: white;
+    border-width: 0px 0px 1px 0px;
+    font-size: 14px;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #333333;
+
+    /* Standard Property */
+    background-color: #333333;
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: #1a1a1a;
+
+    /* Standard Property */
+    background-color: #1a1a1a;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #F0651F;
+
+    /* Standard Property */
+    background-color: #F0651F;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+
+    /* Standard Property */
+    font-size: 16px;
+}
+
+.table-view .table-row-cell:filled {
+    -fx-border-color: white;
+
+    border-color: white;
+}
+
+/* ==> Style for AddTempatScene <== */
+
+.image-upload {
+    -fx-background-color: transparent;
+    -fx-border-color: #bababa;
+    -fx-border-width: 2px; 
+    -fx-border-radius: 5px;
+
+    /* Standard Property */
+    background-color: #333333;
+    border-color: #ffffff;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.addTempatField {
+    -fx-background-color: #333333;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 0px 0px 1px 0px;
+
+    /* Standard Property */
+    background-color: #333333;
+    border-color: #ffffff;
+    border-width: 0px 0px 1px 0px;
+}
+
+.addTempatField:hover {
+    -fx-border-color: #F0651F;
+
+    /* Standard Property */
+    border-color: #F0651F;
+}
+
+.addTempatTextArea {
+    -fx-control-inner-background: #333333;
+    -fx-background-color: #333333;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 0px 0px 1px 0px;
+
+    /* Standard Property */
+    background-color: #333333;
+    border-color: #ffffff;
+    border-width: 0px 0px 1px 0px;
+}
+
+.addTempatTextArea:hover {
+    -fx-border-color: #F0651F;
+
+    /* Standard Property */
+    border-color: #F0651F;
+}
+
+.addTempatButton {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-background-radius: 20px;
+
+    /* Standard Property */
+    background-color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.addTempatButton:hover {
+    -fx-background-color: #F0651F;
+    -fx-text-fill: rgb(0, 0, 0);
+
+    /* Standard Property */
+    background-color: #F0651F;
+}
+

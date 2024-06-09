@@ -22,6 +22,7 @@ import javafx.stage.Stage;
 import travelreview.project.Abstract.AScene;
 import travelreview.project.Controllers.UsersController;
 import travelreview.project.Models.User;
+import travelreview.project.Scenes.Admin_scene.AdminHomeScene;
 import travelreview.project.Scenes.User_scene.HomeScene;
 
 public class LoginScene extends AScene {
@@ -160,7 +161,8 @@ public class LoginScene extends AScene {
                 String role = user.getRole();
 
                 if (role.equals("admin")) {
-                    labelStatus.setText("Login berhasil");
+                    AdminHomeScene adminHomeScene = new AdminHomeScene(stage);
+                    adminHomeScene.show(id);
                 } else {
                     HomeScene homeScene = new HomeScene(stage);
                     homeScene.show(id);

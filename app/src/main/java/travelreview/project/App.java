@@ -9,9 +9,6 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import travelreview.project.Scenes.LoginScene;
-// import travelreview.project.Scenes.User_scene.HomeScene;
-// import travelreview.project.Scenes.User_scene.ProfileScene;
-// import travelreview.project.Scenes.User_scene.TempatListScene;
 
 public class App extends Application {
 
@@ -19,7 +16,7 @@ public class App extends Application {
     public void start(Stage stage) {
         stage.setTitle("TravelReview");
         stage.setResizable(false);
-        Image appIcon = new Image(getClass().getResourceAsStream("/images/OIG1.jpg"));
+        Image appIcon = new Image(getClass().getResourceAsStream("/images/LOGO.jpg"));
         stage.getIcons().add(appIcon);
         
         VBox root = new VBox();
@@ -31,12 +28,6 @@ public class App extends Application {
 
         LoginScene loginScene = new LoginScene(stage);
         loginScene.show();
-        // HomeScene homeScene = new HomeScene(stage);
-        // homeScene.show(10);
-        // TempatListScene tempatListScene = new TempatListScene(stage);
-        // tempatListScene.show(1);
-        // ProfileScene profileScene = new ProfileScene(stage);
-        // profileScene.show(2);
     }
 
     public static void main(String[] args) {
