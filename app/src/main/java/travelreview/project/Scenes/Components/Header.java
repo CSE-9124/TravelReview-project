@@ -60,6 +60,7 @@ public class Header {
         labelUsername.getStyleClass().add("username-shadow");
         HBox hBoxProfile = new HBox(labelUsername, imageCombine);
         hBoxProfile.setAlignment(Pos.CENTER);
+        hBoxProfile.setPadding(new Insets(0, 10, 0, 0));
         hBoxProfile.setSpacing(10);
 
         HBox header = new HBox(spacer, hBoxProfile);

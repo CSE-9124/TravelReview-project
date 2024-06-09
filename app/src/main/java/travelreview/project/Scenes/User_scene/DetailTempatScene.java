@@ -65,8 +65,40 @@ public class DetailTempatScene extends AScene {
             }
         }
 
-        VBox vBoxImageTempat = new VBox(imageViewTempat);
-        vBoxImageTempat.setAlignment(Pos.CENTER);
+        ImageView imageViewTempat2 = new ImageView();
+        imageViewTempat2.setFitWidth(750);
+        imageViewTempat2.setFitHeight(400);
+        imageViewTempat2.setPreserveRatio(true);
+        if (tempatWisata.getImage2Path() != null && !tempatWisata.getImage2Path().isEmpty()) {
+            File fileImage = new File(tempatWisata.getImage2Path());
+            if (fileImage.exists()) {
+                Image image = new Image(fileImage.toURI().toString());
+                imageViewTempat2.setImage(image);
+            }
+        }
+
+        ImageView imageViewTempat3 = new ImageView();
+        imageViewTempat3.setFitWidth(750);
+        imageViewTempat3.setFitHeight(400);
+        imageViewTempat3.setPreserveRatio(true);
+        if (tempatWisata.getImage3Path() != null && !tempatWisata.getImage3Path().isEmpty()) {
+            File fileImage = new File(tempatWisata.getImage3Path());
+            if (fileImage.exists()) {
+                Image image = new Image(fileImage.toURI().toString());
+                imageViewTempat3.setImage(image);
+            }
+        }
+
+        HBox hBoxImageTempat = new HBox(imageViewTempat, imageViewTempat2, imageViewTempat3);
+        hBoxImageTempat.setSpacing(5);
+        hBoxImageTempat.getStyleClass().add("scene");
+        hBoxImageTempat.setAlignment(Pos.CENTER);
+
+        ScrollPane scrollPaneImage = new ScrollPane(hBoxImageTempat);
+        scrollPaneImage.setPrefWidth(375);
+        // scrollPaneImage.setFitToWidth(true);
+        scrollPaneImage.getStyleClass().add("scene");
+        scrollPaneImage.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
         Label labelRating = new Label("Rate");
         labelRating.setFont(Font.font("Sytem", FontWeight.BOLD, 20));
@@ -164,7 +196,7 @@ public class DetailTempatScene extends AScene {
         VBox vBoxComments = new VBox(labelComment, vboxUsersComment, vBoxPostComment);
         vBoxComments.setSpacing(10);
 
-        VBox vBoxMainContent = new VBox(vBoxName, vBoxImageTempat, hBoxRating, hBoxTempat, vBoxDeskripsi, vBoxComments);
+        VBox vBoxMainContent = new VBox(vBoxName, scrollPaneImage, hBoxRating, hBoxTempat, vBoxDeskripsi, vBoxComments);
         vBoxMainContent.setPadding(new Insets(10));
         vBoxMainContent.setSpacing(15);
         vBoxMainContent.setPrefWidth(750);

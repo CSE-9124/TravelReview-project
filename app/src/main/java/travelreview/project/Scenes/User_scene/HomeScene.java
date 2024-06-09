@@ -74,7 +74,7 @@ public class HomeScene extends AScene{
             }
 
             ImageView imageViewTempat = new ImageView();
-            imageViewTempat.setFitWidth(250);
+            imageViewTempat.setFitWidth(245);
             imageViewTempat.setFitHeight(100);
             imageViewTempat.setPreserveRatio(true);
 

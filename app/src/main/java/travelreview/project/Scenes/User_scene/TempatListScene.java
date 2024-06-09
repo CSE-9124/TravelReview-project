@@ -52,7 +52,7 @@ public class TempatListScene extends AScene{
         for (TempatWisata tempat : tempatWisataData) {
             ImageView imageViewTempat = new ImageView();
             imageViewTempat.setFitWidth(250);
-            imageViewTempat.setFitHeight(200);
+            imageViewTempat.setFitHeight(145);
             imageViewTempat.setPreserveRatio(true);
 
             if (tempat.getImagePath() != null && !tempat.getImagePath().isEmpty()) {

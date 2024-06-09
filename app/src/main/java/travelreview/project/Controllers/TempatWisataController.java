@@ -75,8 +75,10 @@ public class TempatWisataController extends DbConfig {
                 String deskripsi = resultSet.getString("deskripsi");
                 int jumlahReview = resultSet.getInt("jumlah_review");
                 double totalRating = resultSet.getDouble("total_rating");
+                String imagePath2 = resultSet.getString("image2_path");
+                String imagePath3 = resultSet.getString("image3_path");
 
-                tempatWisata = new TempatWisata(id, nama, imagePath, lokasi, kota, kategori, deskripsi, jumlahReview, totalRating);
+                tempatWisata = new TempatWisata(id, nama, imagePath, lokasi, kota, kategori, deskripsi, jumlahReview, totalRating, imagePath2, imagePath3);
             }
         } catch (Exception e) {
             e.printStackTrace();
