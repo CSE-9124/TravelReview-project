@@ -9,7 +9,7 @@ import travelreview.project.Models.TempatWisata;
 public class TempatWisataController extends DbConfig {
     // CREATE
     public static boolean addTempatWisata(String name, String imagePath, String lokasi, String kota, String kategori, String deskripsi) {
-        query = "INSERT INTO tempat_wisata (name, image_path, lokasi, kota, kategori, deskripsi) VALUES (?, ?, ?, ?, ?, ?)";
+        query = "INSERT INTO tempat_wisata (nama, image_path, lokasi, kota, kategori, deskripsi) VALUES (?, ?, ?, ?, ?, ?)";
         try {
             getConnection();
             preparedStatement = connection.prepareStatement(query);
