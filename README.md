@@ -91,16 +91,16 @@ C. Admin
 ![Profile Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/ProfileScene.jpg)
 
 ### *Admin Home Scene*
-![Profile Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/AdminHomeScene.jpg)
+![Admin Home Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/AdminHomeScene.jpg)
 
 ### *Tabel List Tempat Wisata*
-![Profile Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/TableTempatWisataScene.jpg)
+![Table List Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/TableTempatWisata.jpg)
 
 ### *Add Tempat Wisata Scene*
-![Profile Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/AddTempatWisata.jpg)
+![Add Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/AddTempatWisata.jpg)
 
 ### *Edit Tempat Wisata Scene*
-![Profile Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/EditTempatWisata.jpg)
+![Edit Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/EditTempatWisata.jpg)
 
 ## Pengujian Pada Aplikasi
 | No | Deskripsi pengujian | Hasil yang diharapkan | Hasil |
