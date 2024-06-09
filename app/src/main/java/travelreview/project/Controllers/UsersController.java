@@ -66,9 +66,10 @@ public class UsersController extends DbConfig {
                     String email = resultSet.getString("email");
                     String role = resultSet.getString("role");
                     String imagePath = resultSet.getString("image_path");
+                    String password = resultSet.getString("password");
                     int age = resultSet.getInt("age");
 
-                    User user = new User(id, username, name, phoneNumber, email, role, imagePath, age);
+                    User user = new User(id, username, name, phoneNumber, email, role, imagePath, password, age);
 
                     return user;
                 }

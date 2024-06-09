@@ -1,7 +1,7 @@
 package travelreview.project.Models;
 
 public class User extends Model{
-    private String username, name, phoneNumber, email, role, imagePath;
+    private String username, name, phoneNumber, email, role, imagePath, password;
     private int age;
     
     // Constructors
@@ -12,7 +12,7 @@ public class User extends Model{
     }
 
     // For method getUserById()
-    public User(int id, String username, String name, String phoneNumber, String email, String role, String imagePath, int age) {
+    public User(int id, String username, String name, String phoneNumber, String email, String role, String imagePath, String password, int age) {
         super(id);
         this.username = username;
         this.name = name;
@@ -21,6 +21,7 @@ public class User extends Model{
         this.role = role;
         this.age = age;
         this.imagePath = imagePath;
+        this.password = password;
     }
 
     // Getter & Settter
@@ -44,4 +45,7 @@ public class User extends Model{
 
     public String getImagePath() {return imagePath;}
     public void setImagePath(String imagePath) {this.imagePath = imagePath;}
+
+    public String getPassword() {return password;}
+    public void setPassword(String password) {this.password = password;}
 }
