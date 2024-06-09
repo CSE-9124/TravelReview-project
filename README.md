@@ -41,10 +41,15 @@ A. General
 
 B. User
   1. Memiliki daftar tempat wisata yang menampilkan foto, nama, dan lokasi tempat wisata dalam bentuk card.
-  2. Memiliki halaman utama yang akan disambut dengan sapaan nama.
+  2. Memiliki halaman utama yang akan disambut dengan sapaan nama dan rekomendai tempat wisata yang diurut berdasarkan nilai Ratenya.
   3. Menampilkan deskripsi tempat wisata yang berisi tentang daya tarik dan apa yang ditawarkan di tempat wisata tersebut.
   4. Memiliki fitur untuk menambahkan dan melihat rating juga ulasan tempat wisata yang diberikan oleh user.
   5. Memiliki fitur untuk mengubah isi profile dan mengupload foto profil.
+
+C. Admin
+  1. Memiliki daftar tempat wisata dalam bentuk Tabel.
+  2. Memiliki halaman utama yang akan dengan sapaan nama.
+  3. Memiliki fitur untuk menambahkan, mengedit dan menghapus tempat wisata
 
 ## Penjelasan Penerapan Prinsip OOP
 1. Pada class *Ascene* menunjukkan prinsip OOP dengan adanya kelas abstrak `AScene`, yang memberikan kerangka dasar dan metode yang harus diimplementasikan oleh kelas turunannya. Ini adalah salah satu bagian dari OOP yaitu **abstarction** karena kelas ini tidak bisa digunakan langsung, hanya sebagai dasar. **Inheritance** terjadi karena kelas turunan akan mewarisi atribut `stage` dan metode `show()` dari `AScene`. **Encapsulation** terlihat dengan melindungi metode `show()` sehingga hanya bisa diakses oleh kelas turunan. **Polymorphism** ditunjukkan dengan metode `show()`
@@ -85,6 +90,33 @@ B. User
 ### *Profile User Scene*
 ![Profile Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/ProfileScene.jpg)
 
+### *Admin Home Scene*
+![Profile Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/AdminHomeScene.jpg)
+
+### *Tabel List Tempat Wisata*
+![Profile Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/TableTempatWisataScene.jpg)
+
+### *Add Tempat Wisata Scene*
+![Profile Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/AddTempatWisata.jpg)
+
+### *Edit Tempat Wisata Scene*
+![Profile Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/EditTempatWisata.jpg)
+
 ## Pengujian Pada Aplikasi
-![Table1](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/Table1.png)
-![Table2](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/Table2.png)
+| No | Deskripsi pengujian | Hasil yang diharapkan | Hasil |
+|----|-----------------------|------------------------|-------|
+| 1  | Percobaan login dengan email atau password yang salah | Sistem dapat menampilkan pesan kesalahan yang sesuai jika email atau password yang dimasukkan salah | Berhasil |
+| 2  | Percobaan login tanpa mengisi email atau password | Aplikasi dapat menampilkan pesan kesalahan yang sesuai jika email atau password tidak diisi | Berhasil |
+| 3  | Percobaan register jika tidak di isi username, nama, email, password | Aplikasi dapat menampilkan pesan kesalahan jika username, nama, email, password tidak diisi | Berhasil |
+| 4  | Percobaan menambahkan komentar dan akan menampilkan semua komentar dari para user | Aplikasi dapat menerima komentar dari user dan menampilkan komentar tersebut | Berhasil |
+| 5  | Percobaan menambahkan rating tempat wisata | Aplikasi dapat menghitung rata rata dari rating yang diberikan tiap user dan menampilkannya | Berhasil |
+| 6  | Percobaan jika komentar dan rating dari tempat wisata masih kosong | Aplikasi dapat menampilkan pesan “Belum ada komentar” dan rating “0.0“ | Berhasil
+| 7  | Percobaan logout user | Aplikasi akan kembali ke menu login saat user memilih menu logout | Berhasil |
+| 8  | Percobaan user menambahkan foto profil | Aplikasi akan menampilkan foto profil user di halaman profil | Berhasil |
+| 9  | Percobaan user tidak menambahkan foto profil | Aplikasi akan menampilkan foto profil default jika pengguna belum menambahkan foto profil | Berhasil |
+| 10 | Percobaan update profil user | Aplikasi akan menampilkan data profil user yang sudah diperbaharui | Berhasil |
+| 11 | Percobaan register dengan memasukkan email yang tidak sesuai syarat (regex) | Aplikasi akan menampilkan pesan kesalahan | Berhasil |
+| 12 | Percobaan login dengan email atau password Admin | Aplikasi akan membawa user ke scene-scene Admin | Berhasil |
+| 13 | Percobaan menambahkan Tempat Wisata | Aplikasi dapat menerima Tempat Wisata dari admin dan ditampilkan ke user scene | Berhasil |
+| 14 | Percobaan mengedit Tempat Wisata | Aplikasi dapat menerima Tempat Wisata yang diedit dan ditampilkan ke user scene | Berhasil |
+| 15 | Percobaan menghapus Tempat Wisata | Aplikasi dapat menghapus Tempat Wisata yang ada didatabase | Berhasil |
